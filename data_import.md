@@ -243,3 +243,59 @@ head(pulse_df)
     ## 4 10026  72.7 male           20            6           18           16
     ## 5 10035  60.4 male            4            0            1            2
     ## 6 10050  84.7 male            2           10           12            8
+
+## Comparison with Base R
+
+what about `read.csv` …?
+
+``` r
+litters_base <- read.csv("./data/FAS_litters.csv")
+litters_readr <- read_csv("./data/FAS_litters.csv")
+```
+
+    ## Parsed with column specification:
+    ## cols(
+    ##   Group = col_character(),
+    ##   `Litter Number` = col_character(),
+    ##   `GD0 weight` = col_double(),
+    ##   `GD18 weight` = col_double(),
+    ##   `GD of Birth` = col_double(),
+    ##   `Pups born alive` = col_double(),
+    ##   `Pups dead @ birth` = col_double(),
+    ##   `Pups survive` = col_double()
+    ## )
+
+``` r
+head(litters_base)
+```
+
+    ##   Group Litter.Number GD0.weight GD18.weight GD.of.Birth Pups.born.alive
+    ## 1  Con7           #85       19.7        34.7          20               3
+    ## 2  Con7     #1/2/95/2       27.0        42.0          19               8
+    ## 3  Con7 #5/5/3/83/3-3       26.0        41.4          19               6
+    ## 4  Con7   #5/4/2/95/2       28.5        44.1          19               5
+    ## 5  Con7   #4/2/95/3-3         NA          NA          20               6
+    ## 6  Con7   #2/2/95/3-2         NA          NA          20               6
+    ##   Pups.dead...birth Pups.survive
+    ## 1                 4            3
+    ## 2                 0            7
+    ## 3                 0            5
+    ## 4                 1            4
+    ## 5                 0            6
+    ## 6                 0            4
+
+``` r
+head(litters_readr)
+```
+
+    ## # A tibble: 6 x 8
+    ##   Group `Litter Number` `GD0 weight` `GD18 weight` `GD of Birth`
+    ##   <chr> <chr>                  <dbl>         <dbl>         <dbl>
+    ## 1 Con7  #85                     19.7          34.7            20
+    ## 2 Con7  #1/2/95/2               27            42              19
+    ## 3 Con7  #5/5/3/83/3-3           26            41.4            19
+    ## 4 Con7  #5/4/2/95/2             28.5          44.1            19
+    ## 5 Con7  #4/2/95/3-3             NA            NA              20
+    ## 6 Con7  #2/2/95/3-2             NA            NA              20
+    ## # … with 3 more variables: `Pups born alive` <dbl>, `Pups dead @ birth` <dbl>,
+    ## #   `Pups survive` <dbl>
