@@ -27,3 +27,16 @@ tail(litters_df)
 ```{r}
 skimr::skim(litters_df)
 ```
+
+## Options to read_csv
+
+Check out `?read_csv()` for more information.
+```{r}
+litters_df <- read_csv("./data/FAS_litters.csv", skip = 10, col_names = FALSE)
+
+#when csv structure is strange: the first row is not variable names
+
+litters_df <- read_csv("./data/FAS_litters.csv", na = c("", ".", 999))
+
+litters_df <- read_csv("./data/FAS_litters.csv", col_types = )
+```
