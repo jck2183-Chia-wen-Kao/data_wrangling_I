@@ -299,3 +299,11 @@ head(litters_readr)
     ## 6 Con7  #2/2/95/3-2             NA            NA              20
     ## # … with 3 more variables: `Pups born alive` <dbl>, `Pups dead @ birth` <dbl>,
     ## #   `Pups survive` <dbl>
+
+## Export Data
+
+Export the mlb sub-table.
+
+``` r
+write_csv(mlb_df, "./data/mlb_subtable.csv")
+```
