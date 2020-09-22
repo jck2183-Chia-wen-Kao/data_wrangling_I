@@ -40,3 +40,24 @@ litters_df <- read_csv("./data/FAS_litters.csv", na = c("", ".", 999))
 
 litters_df <- read_csv("./data/FAS_litters.csv", col_types = )
 ```
+
+## Other file formats
+
+Read in an excel file.
+Check ?read_excel
+
+```{r}
+library(readxl)
+mlb_df <- read_excel("./data/mlb11.xlsx")
+mlb_df
+mlb_df <- read_excel("./data/mlb11.xlsx", range = "A1:F7")
+mlb_df
+```
+
+Read in a SAS file.
+
+```{r}
+library(haven)
+pulse_df <- read_sas("./data/public_pulse_data.sas7bdat") 
+head(pulse_df)
+```
