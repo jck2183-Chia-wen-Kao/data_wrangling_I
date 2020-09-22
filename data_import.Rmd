@@ -8,4 +8,11 @@ library(tidyverse)
 ```
 ## Read in some Data
 
+Read in the litters dataset.
 
+```{r}
+litters_df <- read_csv("./data/FAS_litters.csv") 
+# Follow up Steps
+litters_df <- janitor::clean_names(litters_df)
+```    
+## Take a look at the data
